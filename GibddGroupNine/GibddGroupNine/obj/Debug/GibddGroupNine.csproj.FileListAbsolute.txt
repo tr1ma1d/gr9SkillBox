@@ -1,0 +1,14 @@
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\bin\Debug\GibddGroupNine.exe.config
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\bin\Debug\GibddGroupNine.exe
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\bin\Debug\GibddGroupNine.pdb
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\bin\Debug\MySql.Data.dll
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.csproj.AssemblyReference.cache
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.csproj.SuggestedBindingRedirects.cache
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.Form1.resources
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.Properties.Resources.resources
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.csproj.GenerateResource.cache
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.csproj.CoreCompileInputs.cache
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.csproj.CopyComplete
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.exe
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.pdb
+D:\project\Calendar\GibddGroupNine\GibddGroupNine\obj\Debug\GibddGroupNine.Information.resources
