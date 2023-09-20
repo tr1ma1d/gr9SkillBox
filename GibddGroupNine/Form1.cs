@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -12,12 +13,14 @@ namespace GibddGroupNine
 {
     public partial class Form1 : Form
     {
+        static int counter = 0;
         
         public static string stringConnect = "server=localhost;userid=root;database=gybdd;password=123456;sslmode=none";
-       
+
         public Form1()
         {
             InitializeComponent();
+           
          
         }
         private void LogIn()
@@ -38,7 +41,7 @@ namespace GibddGroupNine
 
             sqlAdapter.SelectCommand = msCommand;
             sqlAdapter.Fill(dt);
-
+      
             if(dt.Rows.Count > 0)
             {
                 MessageBox.Show("You`re successfull login");
@@ -48,9 +51,21 @@ namespace GibddGroupNine
                 inf.Show();
                
             }
-            else
+            else if(dt.Rows.Count == 0)
             {
-                MessageBox.Show("No");
+                counter++;
+                lbWarning.Text = $"У вас осталось попыток: {3 - counter}";
+                if(counter >= 3)
+                {
+                    MessageBox.Show("Режим ожидания - 1минута");
+                    Thread.Sleep(60000);
+                    counter = 0;
+                }
+                else
+                {
+                    lbWarning.Text = null;
+                }
+               
             }
 
 

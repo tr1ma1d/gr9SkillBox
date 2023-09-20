@@ -34,6 +34,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.signButton = new System.Windows.Forms.Button();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbLogin
@@ -95,11 +96,21 @@
             this.signButton.UseVisualStyleBackColor = true;
             this.signButton.Click += new System.EventHandler(this.signButton_Click);
             // 
+            // lbWarning
+            // 
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lbWarning.Location = new System.Drawing.Point(232, 9);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(0, 20);
+            this.lbWarning.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 263);
+            this.Controls.Add(this.lbWarning);
             this.Controls.Add(this.signButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPassword);
@@ -122,6 +133,7 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button signButton;
+        private System.Windows.Forms.Label lbWarning;
     }
 }
 
