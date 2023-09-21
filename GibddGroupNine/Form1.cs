@@ -57,14 +57,11 @@ namespace GibddGroupNine
                 lbWarning.Text = $"У вас осталось попыток: {3 - counter}";
                 if(counter >= 3)
                 {
-                    MessageBox.Show("Режим ожидания - 1минута");
+                    MessageBox.Show("Режим ожидания - 1 минута");
                     Thread.Sleep(60000);
                     counter = 0;
                 }
-                else
-                {
-                    lbWarning.Text = null;
-                }
+               
                
             }
 
