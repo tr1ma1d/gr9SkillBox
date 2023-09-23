@@ -55,7 +55,7 @@ namespace GibddGroupNine
                 MessageBox.Show("You`re successfull login");
 
                 Information inf = new Information();
-                inf.OnTransition += CloseCurrentForm;
+            
                 this.Hide();
                 inf.Show();
       
