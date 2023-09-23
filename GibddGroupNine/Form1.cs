@@ -9,20 +9,26 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 namespace GibddGroupNine
 {
     public partial class Form1 : Form
     {
         static int counter = 0;
-        
+        DateTime lockOut = DateTime.MinValue;
+        private System.Windows.Forms.Timer timer;
         public static string stringConnect = "server=localhost;userid=root;database=gybdd;password=123456;sslmode=none";
 
         public Form1()
         {
             InitializeComponent();
-           
-         
+            timer = new System.Windows.Forms.Timer();
+          
+
+          
         }
+        //relized a button Login
+        
         private void LogIn()
         {
 
@@ -41,14 +47,18 @@ namespace GibddGroupNine
 
             sqlAdapter.SelectCommand = msCommand;
             sqlAdapter.Fill(dt);
-      
+
+            
+
             if(dt.Rows.Count > 0)
             {
                 MessageBox.Show("You`re successfull login");
 
                 Information inf = new Information();
                 inf.OnTransition += CloseCurrentForm;
+                this.Hide();
                 inf.Show();
+      
                
             }
             else if(dt.Rows.Count == 0)
@@ -57,17 +67,22 @@ namespace GibddGroupNine
                 lbWarning.Text = $"У вас осталось попыток: {3 - counter}";
                 if(counter >= 3)
                 {
-                    MessageBox.Show("Режим ожидания - 1 минута");
-                    Thread.Sleep(60000);
-                    counter = 0;
+                    LockButton();
                 }
-               
-               
             }
 
 
 
             conn.Close();
+        }
+        private void LockButton()
+        {
+            lockOut = DateTime.Now.AddMinutes(1);
+            logButton.Enabled = false;
+            counter = 0;
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer.Start();
         }
         private void SignIn()
         {
@@ -105,6 +120,20 @@ namespace GibddGroupNine
         {
             SignIn();
         }
-       
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(lockOut > DateTime.Now)
+            {
+                TimeSpan remain = lockOut - DateTime.Now;
+              
+                lbTimer.Text = $"Осталось: {remain.Seconds}";
+            
+            }
+            else
+            {
+                logButton.Enabled = false;
+            }
+        }
     }
 }

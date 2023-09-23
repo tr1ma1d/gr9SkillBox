@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.logButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.signButton = new System.Windows.Forms.Button();
             this.lbWarning = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbTimer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbLogin
@@ -105,11 +108,27 @@
             this.lbWarning.Size = new System.Drawing.Size(0, 20);
             this.lbWarning.TabIndex = 7;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbTimer
+            // 
+            this.lbTimer.AutoSize = true;
+            this.lbTimer.BackColor = System.Drawing.SystemColors.Control;
+            this.lbTimer.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.lbTimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbTimer.Location = new System.Drawing.Point(249, 118);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(0, 21);
+            this.lbTimer.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 263);
+            this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.lbWarning);
             this.Controls.Add(this.signButton);
             this.Controls.Add(this.label2);
@@ -118,6 +137,7 @@
             this.Controls.Add(this.logButton);
             this.Controls.Add(this.tbLogin);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -134,6 +154,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button signButton;
         private System.Windows.Forms.Label lbWarning;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbTimer;
     }
 }
 
